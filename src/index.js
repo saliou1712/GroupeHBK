@@ -1,13 +1,49 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import AddPanelContextProvider from "./utils/addPanelContext";
+import ArrierePlanContextProvider from "./utils/arrierePlanContext";
+import Home from "./pages/home";
+import InfosPage from "./pages/infosPage";
+import InfosPanelContextProvider from "./utils/infosPanelContext";
+import List_prospect from "./pages/list_prospect";
+import Navbar from "./composants/navbar";
+import ProspectContextProvider from "./utils/prospectContext";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import RendezVous from "./pages/RendezVous";
+import RvPanelContextProvider from "./utils/rvPanelContext";
+import UpdateContextProvider from "./utils/updateContext";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import EditPanelContextProvider from "./utils/editPanelContext";
+
+/* eslint-disable react/jsx-pascal-case */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <UpdateContextProvider>
+    <ArrierePlanContextProvider>
+    <ProspectContextProvider>
+    <EditPanelContextProvider>
+    <InfosPanelContextProvider>
+    <AddPanelContextProvider>
+    <RvPanelContextProvider>
+      <Navbar/>
+      <Router>
+        <Routes>
+          <Route path="*" element={<Home/>}/>
+          <Route path="/groupehbk" element={<Home/>}/>
+          <Route path="/groupehbk/list_prospect" element={<List_prospect/>}/>
+          <Route path="/groupehbk/infos_page" element={<InfosPage/>}/>
+          <Route path="/groupehbk/rendez_vous" element={<RendezVous/>}/>
+        </Routes>
+      </Router>
+    </RvPanelContextProvider>
+    </AddPanelContextProvider>
+    </InfosPanelContextProvider>
+    </EditPanelContextProvider>
+    </ProspectContextProvider>
+    </ArrierePlanContextProvider>
+    </UpdateContextProvider>
   </React.StrictMode>
 );
 
