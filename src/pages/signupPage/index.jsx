@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignupPage(){
     const [prenom, setPrenom] = useState("")
@@ -83,7 +84,7 @@ function SignupPage(){
                         </select>
                     </div>
                     <button onClick={()=>{Signup()}}>Inscription</button>
-                    <a className="login_link" href="/groupehbk/login"><i class="fa-solid fa-right-to-bracket"></i>Se connecter</a>
+                    <Link className="login_link" to="/groupehbk/login"><i class="fa-solid fa-right-to-bracket"></i>Se connecter</Link>
                 </div>
                 <div className="signup_result" id="signup_result">
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
 
 function LoginPage(){
     const [mail, setMail] = useState("")
@@ -24,7 +25,7 @@ function LoginPage(){
                 localStorage.setItem("token", responseData.token)
                 localStorage.setItem("username", responseData.username)
                 setTimeout(()=>{
-                    window.location.pathname ="/groupehbk/home"
+                    <Redirect to="/groupehbk/home"/>
                 }, 3000)
             }
             else{
@@ -50,7 +51,7 @@ function LoginPage(){
                     <input type="mail" placeholder="Adresse e-mail" onChange={(e)=>{setMail(e.target.value)}}/>
                     <input type="password" placeholder="Mot de passe" onChange={(e)=>{setPassword(e.target.value)}}/>
                     <button onClick={()=>{Login()}}>Connexion</button>
-                    <a href="/groupehbk/signup" className="signup_link"><i class="fa-solid fa-user-plus"></i>Créer un compte</a>
+                    <Link to="/groupehbk/signup" className="signup_link"><i class="fa-solid fa-user-plus"></i>Créer un compte</Link>
                 </div>
                 <div className="login_result" id="login_result">
 
