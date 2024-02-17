@@ -11,6 +11,7 @@ function RvPanel(){
     const [dayRv, setDayRv] = useState("")
     const [horaireRv, setHoraireRv] = useState("")
     const [description, setDescription] = useState("")
+    const token = localStorage.getItem("token")
 
     async function AddRv(){
         try{
@@ -20,7 +21,8 @@ function RvPanel(){
                 const response = await fetch("http://localhost:3030/groupehbk/addrv", {
                     method: "POST",
                     headers: {
-                        "Content-Type" : "application/json"
+                        "Content-Type" : "application/json",
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({
                         representant: representant,

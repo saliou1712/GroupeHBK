@@ -41,6 +41,25 @@ body {
   cursor: pointer;
   color: #c2c2eb;
 }
+.nav__links__userparams {
+  font-size: 20px;
+  margin: 0px 10px;
+  color: black;
+  background-color: rgb(171, 171, 224);
+  box-shadow: 0px 0px 3px 1px black;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  border-radius: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__links__userparams:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
 
 .container .base {
   display: flex;
@@ -266,7 +285,7 @@ body {
   padding: 10px;
   background-color: #5050c4;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 80px;
 }
 @media screen and (max-width: 700px) {
@@ -280,13 +299,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+.list_prospect__filtre .status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.list_prospect__filtre .status select {
+  background-color: rgb(217, 217, 244);
+  color: black;
+}
 .list_prospect__filtre select {
   border-radius: 20px;
   padding: 10px;
-  width: 200px;
+  width: 170px;
   margin: 0px 5px;
   border: none;
   outline: none;
+  background-color: rgb(217, 217, 244);
 }
 .list_prospect__filtre option {
   font-size: 20px;
@@ -336,6 +365,7 @@ body {
   flex-wrap: wrap;
   padding: 0px 100px;
   min-height: 85vh;
+  margin-top: 10px;
 }
 
 .prospect {
@@ -356,7 +386,7 @@ body {
   text-decoration: underline;
 }
 .prospect .entreprise {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   margin: 10px;
 }
@@ -589,6 +619,51 @@ body {
   min-height: 40vh;
 }
 
+.page_mail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.page_mail__head {
+  font-size: 50px;
+  font-weight: bold;
+  width: 1000px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.page_mail .fa-circle-xmark {
+  color: red;
+}
+.page_mail__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page_mail__form input {
+  font-size: 30px;
+  background-color: rgb(197, 197, 234);
+  border-radius: 20px;
+  padding: 40px;
+}
+.page_mail__form .btn {
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 25px;
+  background-color: rgb(87, 87, 187);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 3px 1px black;
+  border: none;
+}
+.page_mail__form .btn:hover {
+  cursor: pointer;
+  background-color: rgb(72, 72, 136);
+}
+
 .loading {
   position: absolute;
   top: 50%;
@@ -635,24 +710,365 @@ body {
   align-items: center;
   bottom: 0;
   right: 0;
-  width: 70px;
-  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   font-weight: bold;
   font-size: 30px;
-  color: white;
+  color: rgb(169, 169, 218);
   background-color: #3a3f41;
   margin: 20px;
   box-shadow: 0px 0px 5px 1px black;
-  color: rgb(109, 177, 7);
 }
 .btn_export:hover {
   scale: 1.05;
   cursor: pointer;
 }
 
+.btn_import {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 160px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(169, 169, 218);
+  background-color: #3a3f41;
+  margin: 20px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.btn_import:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.btn_send_mail {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 80px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(169, 169, 218);
+  background-color: #3a3f41;
+  margin: 20px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.btn_send_mail:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.total_prospect {
+  font-size: 20px;
+}
+.total_prospect span {
+  color: rgb(212, 212, 224);
+}
+
 .vide {
   font-size: 20px;
+}
+
+.send_mail_load {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  bottom: 80px;
+  right: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 20px;
+}
+.send_mail_load .fa-circle-check {
+  color: rgb(112, 185, 3);
+}
+
+.import_file_panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #e6e6e6;
+  z-index: 100;
+  border-radius: 20px;
+}
+.import_file_panel__head {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 500px;
+  text-align: center;
+  font-weight: bold;
+}
+.import_file_panel__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.import_file_panel__form input {
+  font-size: 25px;
+  background-color: rgb(188, 204, 209);
+  padding: 20px;
+}
+.import_file_panel__form button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(105, 105, 187);
+  color: white;
+}
+.import_file_panel__form button:hover {
+  cursor: pointer;
+  scale: 1.05;
+  background-color: rgb(44, 44, 130);
+}
+.import_file_panel__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 25px;
+}
+.import_file_panel .result {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.login_page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.login_page__presentation {
+  width: 60%;
+  height: 100%;
+  background-image: url("../../public/img/blue2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login_page__form {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login_page__form__head {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+.login_page__form__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+.login_page__form__content input {
+  padding: 20px;
+  width: 70%;
+  font-size: 20px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(228, 228, 243);
+  box-shadow: 0px 0px 5px 1px black inset;
+  color: black;
+}
+.login_page__form__content button {
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: rgb(52, 52, 198);
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.login_page__form__content button:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+.login_page__form__content .signup_link {
+  width: 70%;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(52, 52, 198);
+  text-decoration: underline;
+}
+.login_page__form__content .signup_link i {
+  margin-right: 5px;
+}
+.login_page__form .login_result {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.signup_page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.signup_page__presentation {
+  width: 60%;
+  height: 100%;
+  background-image: url("../../public/img/blue2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signup_page__form {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup_page__form__head {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+.signup_page__form__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+.signup_page__form__content input {
+  padding: 20px;
+  width: 70%;
+  font-size: 20px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(228, 228, 243);
+  box-shadow: 0px 0px 5px 1px black inset;
+  color: black;
+}
+.signup_page__form__content button {
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: rgb(52, 52, 198);
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.signup_page__form__content button:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+.signup_page__form__content .fonction {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.signup_page__form__content .fonction__title {
+  font-size: 20px;
+  margin-right: 5px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  min-width: 10%;
+  text-align: center;
+}
+.signup_page__form__content .fonction select {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 1px black inset;
+  border: none;
+  width: 59%;
+}
+.signup_page__form__content .login_link {
+  width: 70%;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(52, 52, 198);
+  text-decoration: underline;
+}
+.signup_page__form__content .login_link i {
+  margin-right: 5px;
+}
+.signup_page__form .signup_result {
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.user_main {
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 3px 2px black;
+  color: white;
+  min-width: 200px;
+}
+.user_main__username {
+  background-color: rgb(79, 79, 148);
+  font-size: 25px;
+  width: 100%;
+  padding: 10px 0px;
+}
+.user_main .logout {
+  font-size: 25px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 10px 0px;
+}
+.user_main .logout:hover {
+  cursor: pointer;
+  color: rgb(100, 100, 161);
 }
 
 footer {

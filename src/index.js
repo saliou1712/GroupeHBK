@@ -1,10 +1,13 @@
 import AddPanelContextProvider from "./utils/addPanelContext";
 import ArrierePlanContextProvider from "./utils/arrierePlanContext";
+import EditPanelContextProvider from "./utils/editPanelContext";
 import Home from "./pages/home";
+import ImportFilePanelContextProvider from "./utils/importFilePanelContext";
 import InfosPage from "./pages/infosPage";
 import InfosPanelContextProvider from "./utils/infosPanelContext";
 import List_prospect from "./pages/list_prospect";
-import Navbar from "./composants/navbar";
+import LoginPage from "./pages/loginPage";
+import PageMail from "./pages/pageMail";
 import ProspectContextProvider from "./utils/prospectContext";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -13,7 +16,8 @@ import RvPanelContextProvider from "./utils/rvPanelContext";
 import UpdateContextProvider from "./utils/updateContext";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import EditPanelContextProvider from "./utils/editPanelContext";
+import SignupPage from "./pages/signupPage";
+import EmailConfirmationPage from "./pages/emailConfirmationPage";
 
 /* eslint-disable react/jsx-pascal-case */
 
@@ -23,24 +27,29 @@ root.render(
     <UpdateContextProvider>
     <ArrierePlanContextProvider>
     <ProspectContextProvider>
+    <ImportFilePanelContextProvider>
     <EditPanelContextProvider>
     <InfosPanelContextProvider>
     <AddPanelContextProvider>
     <RvPanelContextProvider>
-      <Navbar/>
       <Router>
         <Routes>
-          <Route path="*" element={<Home/>}/>
-          <Route path="/groupehbk" element={<Home/>}/>
+          <Route path="/groupehbk/login" element={<LoginPage/>}/>
+          <Route path="/groupehbk/signup" element={<SignupPage/>}/>
+          <Route path="/groupehbk/confirm-email" element={<EmailConfirmationPage />} />
+          <Route path="/groupehbk/home" element={<Home/>}/>
           <Route path="/groupehbk/list_prospect" element={<List_prospect/>}/>
           <Route path="/groupehbk/infos_page" element={<InfosPage/>}/>
           <Route path="/groupehbk/rendez_vous" element={<RendezVous/>}/>
+          <Route path="/groupehbk/page_mail" element={<PageMail/>}/>
+          <Route path="*" element={<LoginPage/>}/>
         </Routes>
       </Router>
     </RvPanelContextProvider>
     </AddPanelContextProvider>
     </InfosPanelContextProvider>
     </EditPanelContextProvider>
+    </ImportFilePanelContextProvider>
     </ProspectContextProvider>
     </ArrierePlanContextProvider>
     </UpdateContextProvider>

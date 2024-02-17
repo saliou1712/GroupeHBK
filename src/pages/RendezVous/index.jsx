@@ -1,3 +1,4 @@
+import Navbar from "../../composants/navbar";
 import Rv from "../../composants/rv";
 import { useEffect, useState } from "react";
 
@@ -14,6 +15,7 @@ function RendezVous(){
     const [allRv, setAllRv] = useState([])
     const [todayRv, setTodayRv] = useState([])
     const [rvAvenir, setRvAvenir] = useState([])
+    const token = localStorage.getItem("token")
 
     useEffect(()=>{
         async function getAllRv(){
@@ -23,7 +25,8 @@ function RendezVous(){
                 const response = await fetch("http://localhost:3030/groupehbk/getallrv", {
                     method: "GET",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        'Authorization': `Bearer ${token}`
                     }
                 })
                 if(response.status === 200){
@@ -46,7 +49,7 @@ function RendezVous(){
             }
         }
         getAllRv()
-    }, [])
+    }, [token])
 
     function filterRvAvenir(date){
         const filteredRv = allRv.filter(
@@ -96,6 +99,7 @@ function RendezVous(){
                     <div className="loading"></div>
                 </div>
             </div>
+            <Navbar/>
         </div>
     )
 }

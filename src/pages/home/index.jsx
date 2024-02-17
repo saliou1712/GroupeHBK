@@ -1,5 +1,6 @@
 import "../../style/style.css";
 import Add_panel from "../../composants/add_panel";
+import Navbar from "../../composants/navbar";
 import { useContext } from "react";
 import { AddPanelContext } from "../../utils/addPanelContext";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
@@ -27,6 +28,7 @@ function Home(){
                 </div>
             </div>
             { panelDisplay && <Add_panel panelDisplay={panelDisplay} setPanelDisplay={setPanelDisplay}/> }
+            <Navbar/>
         </div>
     )
 }

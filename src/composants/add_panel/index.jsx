@@ -12,6 +12,7 @@ function Add_panel({panelDisplay, setPanelDisplay}){
     const [commentaire, setCommentaire] = useState("")
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
     const {update, setUpdate} = useContext(UpdateContext)
+    const token = localStorage.getItem("token")
 
     async function AddProspect(){
         if(nom_entreprise !== "" && domaine !== "" && numero !== "" && mail !== ""){
@@ -21,7 +22,8 @@ function Add_panel({panelDisplay, setPanelDisplay}){
                 const response = await fetch("http://localhost:3030/groupehbk/addprospect", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({
                         nom_entreprise: nom_entreprise,
@@ -36,6 +38,10 @@ function Add_panel({panelDisplay, setPanelDisplay}){
                 if(response.status === 200){
                     resultDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i>`
                     setUpdate(!update)
+                }
+                if(response.status === 400){
+                    const responseData = await response.json()
+                    resultDiv.innerHTML = responseData.message
                 }
             }
             catch(err){

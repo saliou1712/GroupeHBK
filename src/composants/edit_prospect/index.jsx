@@ -16,6 +16,7 @@ function EditProspect(){
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
     const {update, setUpdate} = useContext(UpdateContext)
     const {displayEditPanel, setEditDisplayPanel} = useContext(EditPanelContext)
+    const token = localStorage.getItem("token")
 
     async function Edit(){
         if(nom_entreprise !== "" && domaine !== "" && numero !== "" && mail !== ""){
@@ -25,7 +26,8 @@ function EditProspect(){
                 const response = await fetch("http://localhost:3030/groupehbk/updateprospect", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify({
                         _id: prospectToSee._id,
@@ -56,7 +58,8 @@ function EditProspect(){
             const response = await fetch("http://localhost:3030/groupehbk/deleteprospect", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     _id: prospectToSee._id
