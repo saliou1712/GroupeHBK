@@ -34,7 +34,7 @@ root.render(
     <RvPanelContextProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginPage/>}/>
+          <Route path="/groupehbk/" element={<LoginPage/>}/>
           <Route path="/groupehbk/login" element={<LoginPage/>}/>
           <Route path="/groupehbk/signup" element={<SignupPage/>}/>
           <Route path="/groupehbk/confirm-email" element={<EmailConfirmationPage />} />
