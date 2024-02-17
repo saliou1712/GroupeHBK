@@ -15,7 +15,7 @@ function Home(){
         <div className="container">
             <div className="base">
                 <div className="base__quote">
-                    Au service des infrastructures communales
+                    Au service du développement socio-économique
                 </div>
                 <div className="fliales">
                     <div className="fliale1"></div>

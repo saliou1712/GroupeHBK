@@ -1,6 +1,7 @@
 import AddPanelContextProvider from "./utils/addPanelContext";
 import ArrierePlanContextProvider from "./utils/arrierePlanContext";
 import EditPanelContextProvider from "./utils/editPanelContext";
+import EmailConfirmationPage from "./pages/emailConfirmationPage";
 import Home from "./pages/home";
 import ImportFilePanelContextProvider from "./utils/importFilePanelContext";
 import InfosPage from "./pages/infosPage";
@@ -13,11 +14,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import RendezVous from "./pages/RendezVous";
 import RvPanelContextProvider from "./utils/rvPanelContext";
+import SignupPage from "./pages/signupPage";
 import UpdateContextProvider from "./utils/updateContext";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SignupPage from "./pages/signupPage";
-import EmailConfirmationPage from "./pages/emailConfirmationPage";
 
 /* eslint-disable react/jsx-pascal-case */
 
@@ -42,7 +42,6 @@ root.render(
           <Route path="/groupehbk/infos_page" element={<InfosPage/>}/>
           <Route path="/groupehbk/rendez_vous" element={<RendezVous/>}/>
           <Route path="/groupehbk/page_mail" element={<PageMail/>}/>
-          <Route path="*" element={<LoginPage/>}/>
         </Routes>
       </Router>
     </RvPanelContextProvider>
