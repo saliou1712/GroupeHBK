@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/GroupeHBK/static/css/main.f2f86d32.css",
+    "main.js": "/GroupeHBK/static/js/main.4abbf87d.js",
+    "static/js/592.8a4ad41c.chunk.js": "/GroupeHBK/static/js/592.8a4ad41c.chunk.js",
+    "static/media/fliale2.jpg": "/GroupeHBK/static/media/fliale2.b9df594747cfa90ba966.jpg",
+    "static/media/fliale3.jpg": "/GroupeHBK/static/media/fliale3.0eb0ed4a2bc5404831b9.jpg",
+    "static/media/fliale4.jpg": "/GroupeHBK/static/media/fliale4.49bc113e9e7947bc5d69.jpg",
+    "static/media/fliale1.jpg": "/GroupeHBK/static/media/fliale1.eb4a2ebd73b03cda7a6c.jpg",
+    "static/media/img1.jpg": "/GroupeHBK/static/media/img1.5aad61f1ba1ed4922fd5.jpg",
+    "static/media/blue2.jpg": "/GroupeHBK/static/media/blue2.052a4f2b61f4a5038641.jpg",
+    "index.html": "/GroupeHBK/index.html",
+    "main.f2f86d32.css.map": "/GroupeHBK/static/css/main.f2f86d32.css.map",
+    "main.4abbf87d.js.map": "/GroupeHBK/static/js/main.4abbf87d.js.map",
+    "592.8a4ad41c.chunk.js.map": "/GroupeHBK/static/js/592.8a4ad41c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2f86d32.css",
+    "static/js/main.4abbf87d.js"
+  ]
+}
