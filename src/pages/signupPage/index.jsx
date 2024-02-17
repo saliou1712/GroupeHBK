@@ -45,6 +45,7 @@ function SignupPage(){
             }
             catch(err){
                 console.log(err)
+                signupResultDiv.innerHTML = "Le serveur est indisponible"
             }
         }
         else{
@@ -64,7 +65,7 @@ function SignupPage(){
             </div>
             <div className="signup_page__form">
                 <div className="signup_page__form__head">
-                    Créer un nouveau compte <br /> <span style={{color: "rgb(52, 52, 198)"}}>Groupe HBK</span>
+                    Créer un compte <br /> <span style={{color: "rgb(52, 52, 198)"}}>Groupe HBK</span>
                 </div>
                 <div className="signup_page__form__content">
                     <input type="text" name="prenom" placeholder="Prenom" onChange={(e)=>{setPrenom(e.target.value)}}/>

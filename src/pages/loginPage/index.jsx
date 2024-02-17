@@ -37,6 +37,7 @@ function LoginPage(){
         }
         catch(err){
             console.log(err)
+            loginResultDiv.innerHTML = "Le serveur est indisponible"
         }
     }
 

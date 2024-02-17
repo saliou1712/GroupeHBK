@@ -957,8 +957,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 .signup_page__form__head {
   font-size: 45px;
@@ -1023,7 +1023,7 @@ body {
   border-radius: 20px;
   box-shadow: 0px 0px 5px 1px black inset;
   border: none;
-  width: 59%;
+  width: 54%;
 }
 .signup_page__form__content .login_link {
   width: 70%;
