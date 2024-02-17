@@ -44,7 +44,7 @@ function LoginPage(){
     return(
         <div className="login_page">
             <div className="login_page__presentation">
-
+                
             </div>
             <div className="login_page__form">
                 <div className="login_page__form__head">

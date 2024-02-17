@@ -4,7 +4,6 @@ import EditPanelContextProvider from "./utils/editPanelContext";
 import EmailConfirmationPage from "./pages/emailConfirmationPage";
 import Home from "./pages/home";
 import ImportFilePanelContextProvider from "./utils/importFilePanelContext";
-import InfosPage from "./pages/infosPage";
 import InfosPanelContextProvider from "./utils/infosPanelContext";
 import List_prospect from "./pages/list_prospect";
 import LoginPage from "./pages/loginPage";
@@ -40,7 +39,6 @@ root.render(
           <Route path="/groupehbk/confirm-email" element={<EmailConfirmationPage />} />
           <Route path="/groupehbk/home" element={<Home/>}/>
           <Route path="/groupehbk/list_prospect" element={<List_prospect/>}/>
-          <Route path="/groupehbk/infos_page" element={<InfosPage/>}/>
           <Route path="/groupehbk/rendez_vous" element={<RendezVous/>}/>
           <Route path="/groupehbk/page_mail" element={<PageMail/>}/>
         </Routes>

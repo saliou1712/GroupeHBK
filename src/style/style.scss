@@ -287,7 +287,7 @@ body{
         background-color: lighten($color: rgb(44, 44, 130), $amount: 20);
         color: white;
         font-size: 15px;
-        margin-top: 80px;
+        margin-top: 85px;
         @media screen and (max-width: 700px) {
             margin-top: 105px;
         }
@@ -370,7 +370,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: rgb(175, 175, 236);
+    background-color: rgb(208, 208, 246);
     color: black;
     margin: 20px;
     box-shadow: 0px 0px 5px 1px black;
@@ -386,7 +386,7 @@ body{
         margin: 10px;
         &:hover{
             cursor: pointer;
-            color: darken($color: white, $amount: 10);
+            color: blue;
         }
     }
     .domaine, .representant{
@@ -574,16 +574,17 @@ body{
 }
 
 .rendez_vous{
+    padding-top: 85px;
     &__today{
-        margin-top: 80px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 5px;
     }
     &__avenir{
         display: flex;
         flex-direction: column;
         .rv{
-            background-color: rgb(180, 180, 193);
+            background-color: rgb(173, 202, 255);
         }
     }
     &__title{
@@ -594,11 +595,11 @@ body{
         font-size: 30px;
         font-weight: bold;
         padding: 10px;
-        border-bottom: solid 5px rgb(148, 148, 218);
         margin: 0px 5px;
-        color: rgb(44, 44, 130);
-        background-color: rgb(168, 168, 235);
-        border-radius: 20px;
+        color: rgb(20, 20, 43);
+        background-color: rgb(140, 140, 243);
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
         input{
             padding: 5px;
             border-radius: 5px;
@@ -608,12 +609,16 @@ body{
     }
     &__list{
         display: flex;
+        box-shadow: 0px 0px 5px 1px black inset;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         align-items: center;
+        margin: 0px 5px;
         padding: 0px 20px;
-        min-height: 40vh;
+        min-height: 32.6vh;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 }
 
@@ -679,8 +684,8 @@ body{
     margin: 10px;
     min-height: 140px;
     width: 140px;
-    background-color: rgb(101, 101, 239);
-    color: white;
+    background-color: rgb(208, 208, 246);
+    color: black;
     border-radius: 20px;
     box-shadow: 0px 0px 3px 0.5px black;
     text-align: center;
@@ -699,6 +704,96 @@ body{
     &__prospect, &__entreprise, &__horaire{
         font-weight: bold;
     }
+    &__bts{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        &__delete{
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            color: black;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(225, 152, 152);
+            box-shadow: 0px 0px 3px 1px black;
+            margin: 0px 5px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.03;
+            }
+        }
+        &__edit{
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            color: black;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(127, 237, 127);
+            box-shadow: 0px 0px 3px 1px black;
+            margin: 0px 5px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.03;
+            }
+        }
+    }
+}
+
+.delete_rv_panel{
+    padding: 10px;
+    background-color: lighten($color: white, $amount: 20);
+    border-radius: 20px;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    color: black;
+    transform: translate(-50%, -50%);
+    &__head{
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+    }
+    &__content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        &__close{
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 0px 5px;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.03;
+            }
+        }
+        &__continue{
+            font-size: 20px;
+            background-color: rgb(234, 68, 68);
+            color: white;
+            padding: 10px;
+            margin: 0px 5px;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.03;
+            }
+        }
+    }
 }
 
 .btn_export{
@@ -716,8 +811,8 @@ body{
     border-radius: 100%;
     font-weight: bold;
     font-size: 30px;
-    color: rgb(169, 169, 218);
-    background-color: lighten($color: rgb(34, 37, 38), $amount: 10);
+    color: white;
+    background-color: rgb(51, 51, 142);
     margin: 20px;
     box-shadow: 0px 0px 5px 1px black;
     &:hover{
@@ -741,8 +836,8 @@ body{
     border-radius: 100%;
     font-weight: bold;
     font-size: 30px;
-    color: rgb(169, 169, 218);
-    background-color: lighten($color: rgb(34, 37, 38), $amount: 10);
+    color: white;
+    background-color: rgb(51, 51, 142);
     margin: 20px;
     box-shadow: 0px 0px 5px 1px black;
     &:hover{
@@ -1032,7 +1127,7 @@ body{
             }
         }
         .signup_result{
-            margin-top: 20px;
+            margin: 20px 0px;
             font-size: 25px;
             text-align: center;
         }
@@ -1079,3 +1174,15 @@ footer{
     padding: 20px;
 }
 
+::-webkit-scrollbar {
+    width: 5px; /* Largeur de la barre de défilement */
+    
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgb(107, 107, 222); /* Couleur de la poignée de la barre de défilement */
+}
+  
+::-webkit-scrollbar-track {
+    background-color: #ecf0f1; /* Couleur de la piste de la barre de défilement */
+}

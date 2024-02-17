@@ -1,7 +1,7 @@
 import "../../style/style.css";
 import Add_panel from "../../composants/add_panel";
 import Navbar from "../../composants/navbar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AddPanelContext } from "../../utils/addPanelContext";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
 
@@ -10,6 +10,13 @@ import { ArrierePlanContext } from "../../utils/arrierePlanContext";
 function Home(){
     const {panelDisplay, setPanelDisplay} = useContext(AddPanelContext)
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
+
+    useEffect(()=>{
+        return ()=>{
+            setDisplayArrierePlan(false)
+            setPanelDisplay(false)
+        }
+    }, [setDisplayArrierePlan, setPanelDisplay])
 
     return(
         <div className="container">

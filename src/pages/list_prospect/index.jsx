@@ -20,12 +20,12 @@ import { UpdateContext } from "../../utils/updateContext";
 function List_prospect(){
     const [allProspects, setAllProspects] = useState([])
     const {panelDisplay, setPanelDisplay} = useContext(AddPanelContext)
-    const {displayInfosPanel} = useContext(InfosPanelContext)
+    const {displayInfosPanel, setDisplayInfosPanel} = useContext(InfosPanelContext)
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
-    const {displayRvPanel} = useContext(RvPanelContext)
+    const {displayRvPanel, setDisplayRvPanel} = useContext(RvPanelContext)
     const {update} = useContext(UpdateContext)
     const [filteredProspect, setFilteredProspect] = useState([])
-    const {displayEditPanel} = useContext(EditPanelContext)
+    const {displayEditPanel, setEditDisplayPanel} = useContext(EditPanelContext)
     const {displayFilePanelImport, setDisplayFilePanelImport} = useContext(ImportFilePanelContext)
     const token = localStorage.getItem("token")
 
@@ -56,7 +56,16 @@ function List_prospect(){
             }
         }
         getAllTaches()
-    }, [update, token])
+
+        return ()=>{
+            setDisplayArrierePlan(false)
+            setPanelDisplay(false)
+            setDisplayInfosPanel(false)
+            setDisplayRvPanel(false)
+            setDisplayFilePanelImport(false)
+            setEditDisplayPanel(false)
+        }
+    }, [update, token, setDisplayArrierePlan, setPanelDisplay, setDisplayInfosPanel, setDisplayRvPanel, setDisplayFilePanelImport, setEditDisplayPanel])
 
     function filterProspects(domaine){
         if(domaine !== ""){

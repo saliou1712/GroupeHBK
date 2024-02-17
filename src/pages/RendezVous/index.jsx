@@ -1,6 +1,8 @@
+import ArrierePlan from "../../composants/arrierePlan";
 import Navbar from "../../composants/navbar";
 import Rv from "../../composants/rv";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ArrierePlanContext } from "../../utils/arrierePlanContext";
 
 function getDateDemain() {
     var demain = new Date();
@@ -16,6 +18,7 @@ function RendezVous(){
     const [todayRv, setTodayRv] = useState([])
     const [rvAvenir, setRvAvenir] = useState([])
     const token = localStorage.getItem("token")
+    const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
 
     useEffect(()=>{
         async function getAllRv(){
@@ -49,7 +52,11 @@ function RendezVous(){
             }
         }
         getAllRv()
-    }, [token])
+
+        return ()=>{
+            setDisplayArrierePlan(false)
+        }
+    }, [setDisplayArrierePlan, token])
 
     function filterRvAvenir(date){
         const filteredRv = allRv.filter(
@@ -98,8 +105,9 @@ function RendezVous(){
                     }
                     <div className="loading"></div>
                 </div>
+                <Navbar/>
             </div>
-            <Navbar/>
+            { displayArrierePlan && <ArrierePlan/>}
         </div>
     )
 }
