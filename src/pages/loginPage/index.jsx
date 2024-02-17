@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage(){
     const [mail, setMail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate();
 
     async function Login(){
         const loginResultDiv = document.getElementById("login_result")
@@ -25,7 +27,7 @@ function LoginPage(){
                 localStorage.setItem("token", responseData.token)
                 localStorage.setItem("username", responseData.username)
                 setTimeout(()=>{
-                    <Redirect to="/groupehbk/home"/>
+                   navigate("/groupehbk/home")
                 }, 3000)
             }
             else{
