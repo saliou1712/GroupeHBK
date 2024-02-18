@@ -1,10 +1,15 @@
 import DeleteRvPanel from "../deleteRvPanel";
+import RvEditPanel from "../rvEditPanel";
 import { useContext, useState } from "react";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
+import { RvEditPanelContext } from "../../utils/editRvPanelContext";
+import { RvContext } from "../../utils/rvContext";
 
 function Rv({data}){
     const [displayDeletePanel, setDisplayDeletePanel] = useState(false)
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
+    const {displayRvEditPanel, setDisplayRvEditPanel} = useContext(RvEditPanelContext)
+    const {setRvToSee} = useContext(RvContext)
 
     function formatString(chaine, end){
         if(chaine.length > end){
@@ -24,11 +29,12 @@ function Rv({data}){
                 <div className="rv__bts__delete" onClick={()=>{setDisplayDeletePanel(!displayDeletePanel); setDisplayArrierePlan(!displayArrierePlan)}}>
                     <i class="fa-solid fa-trash"></i>
                 </div>
-                <div className="rv__bts__edit">
-                    <i class="fa-regular fa-calendar-check"></i>
+                <div className="rv__bts__edit" onClick={()=>{setRvToSee(data); setDisplayRvEditPanel(!displayRvEditPanel); setDisplayArrierePlan(!displayArrierePlan)}}>
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </div>
             </div>
             { displayDeletePanel && <DeleteRvPanel data={data} setDisplayDeletePanel={setDisplayDeletePanel}/>}
+            { displayRvEditPanel && <RvEditPanel data={data} /> }
         </div>
     )
 }

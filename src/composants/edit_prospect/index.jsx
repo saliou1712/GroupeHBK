@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
-import { UpdateContext } from "../../utils/updateContext";
 import { EditPanelContext } from "../../utils/editPanelContext";
 import { ProspectContext } from "../../utils/prospectContext";
+import { UpdateContext } from "../../utils/updateContext";
 
 function EditProspect(){
     const {prospectToSee} = useContext(ProspectContext)
@@ -87,11 +87,17 @@ function EditProspect(){
                 <select defaultValue={prospectToSee.domaine} onChange={(e)=>{setDomaine(e.target.value)}}>
                     <option value="">Domaine d'activité</option>
                     <option value="Agro-alimentaire">Agro-alimentaire</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Informatique">Informatique</option>
-                    <option value="Automatisation">Automatisation</option>
+                    <option value="Fabrication">Fabrication</option>
+                    <option value="Services financiers">Services financiers</option>
+                    <option value="Tourisme">Tourisme</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Energie">Energie</option>
+                    <option value="Immobilier">Immobilier</option>
+                    <option value="Santé">Santé</option>
+                    <option value="Education">Education</option>
+                    <option value="TIC">TIC</option>
                     <option value="BTP">BTP</option>
-                    <option value="Electricité">Electricité</option>
                     <option value="Commerce">Commerce</option>
                     <option value="Industriel">Industriel</option>
                 </select>

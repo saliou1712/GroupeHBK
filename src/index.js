@@ -12,6 +12,8 @@ import ProspectContextProvider from "./utils/prospectContext";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import RendezVous from "./pages/RendezVous";
+import RvContextProvider from "./utils/rvContext";
+import RvEditPanelContextProvider from "./utils/editRvPanelContext";
 import RvPanelContextProvider from "./utils/rvPanelContext";
 import SignupPage from "./pages/signupPage";
 import UpdateContextProvider from "./utils/updateContext";
@@ -26,11 +28,13 @@ root.render(
     <UpdateContextProvider>
     <ArrierePlanContextProvider>
     <ProspectContextProvider>
+    <RvContextProvider>
     <ImportFilePanelContextProvider>
     <EditPanelContextProvider>
     <InfosPanelContextProvider>
     <AddPanelContextProvider>
     <RvPanelContextProvider>
+    <RvEditPanelContextProvider>
       <Router>
         <Routes>
           <Route path="/groupehbk/" element={<LoginPage/>}/>
@@ -43,11 +47,13 @@ root.render(
           <Route path="/groupehbk/page_mail" element={<PageMail/>}/>
         </Routes>
       </Router>
+    </RvEditPanelContextProvider>
     </RvPanelContextProvider>
     </AddPanelContextProvider>
     </InfosPanelContextProvider>
     </EditPanelContextProvider>
     </ImportFilePanelContextProvider>
+    </RvContextProvider>
     </ProspectContextProvider>
     </ArrierePlanContextProvider>
     </UpdateContextProvider>

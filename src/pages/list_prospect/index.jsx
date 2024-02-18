@@ -15,6 +15,8 @@ import { InfosPanelContext } from "../../utils/infosPanelContext";
 import { RvPanelContext } from "../../utils/rvPanelContext";
 import { UpdateContext } from "../../utils/updateContext";
 
+/* eslint-disable react/jsx-no-comment-textnodes */
+
 /* eslint-disable react/jsx-pascal-case */
 
 function List_prospect(){
@@ -122,6 +124,7 @@ function List_prospect(){
         }
     }
 
+    /*
     async function SendMailToAll(){
         try{
             const loader = document.getElementById("loader")
@@ -139,6 +142,7 @@ function List_prospect(){
             if(response.status === 200){
                 loader.innerHTML = `<i class="fa-solid fa-circle-check"></i>`
                 console.log("Mails Envoyés")
+                setUpdate(!update)
                 setTimeout(() => {
                     loader.innerHTML = ""
                 }, 3000);
@@ -148,6 +152,7 @@ function List_prospect(){
             console.log(err)
         }
     }
+    */
 
     function FilterByStatus(status){
         switch(status){
@@ -180,11 +185,17 @@ function List_prospect(){
                     <select name="domaine" id="domaine" onChange={(e)=>{filterProspects(e.target.value)}}>
                         <option value="">Aucun filtre</option>
                         <option value="Agro-alimentaire">Agro-alimentaire</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Informatique">Informatique</option>
-                        <option value="Automatisation">Automatisation</option>
+                        <option value="Fabrication">Fabrication</option>
+                        <option value="Services financiers">Services financiers</option>
+                        <option value="Tourisme">Tourisme</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Energie">Energie</option>
+                        <option value="Immobilier">Immobilier</option>
+                        <option value="Santé">Santé</option>
+                        <option value="Education">Education</option>
+                        <option value="TIC">TIC</option>
                         <option value="BTP">BTP</option>
-                        <option value="Electricité">Electricité</option>
                         <option value="Commerce">Commerce</option>
                         <option value="Industriel">Industriel</option>
                     </select>
@@ -229,9 +240,15 @@ function List_prospect(){
             <div className="btn_import" onClick={()=>{setDisplayFilePanelImport(!displayFilePanelImport); setDisplayArrierePlan(!displayArrierePlan)}}>
                 <i class="fa-solid fa-file-import fa-flip-horizontal"></i>
             </div>
-            <div className="btn_send_mail" onClick={()=>{SendMailToAll()}}>
-                <i class="fa-solid fa-envelopes-bulk"></i>
-            </div>
+            
+            {
+                /*
+                <div className="btn_send_mail" onClick={()=>{SendMailToAll()}}>
+                    <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                */
+            }
+            
             <div className="send_mail_load" id="loader">
                 
             </div>

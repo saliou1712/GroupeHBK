@@ -3,6 +3,8 @@ import Navbar from "../../composants/navbar";
 import Rv from "../../composants/rv";
 import { useContext, useEffect, useState } from "react";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
+import { RvEditPanelContext } from "../../utils/editRvPanelContext";
+import { UpdateContext } from "../../utils/updateContext";
 
 function getDateDemain() {
     var demain = new Date();
@@ -19,6 +21,8 @@ function RendezVous(){
     const [rvAvenir, setRvAvenir] = useState([])
     const token = localStorage.getItem("token")
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
+    const {setDisplayRvEditPanel} = useContext(RvEditPanelContext)
+    const {update} = useContext(UpdateContext)
 
     useEffect(()=>{
         async function getAllRv(){
@@ -55,8 +59,9 @@ function RendezVous(){
 
         return ()=>{
             setDisplayArrierePlan(false)
+            setDisplayRvEditPanel(false)
         }
-    }, [setDisplayArrierePlan, token])
+    }, [update, setDisplayArrierePlan, token, setDisplayRvEditPanel])
 
     function filterRvAvenir(date){
         const filteredRv = allRv.filter(
@@ -75,8 +80,8 @@ function RendezVous(){
                     {
                         todayRv.length > 0 ? (
                             todayRv.map(
-                                (rv) => (
-                                    <Rv data={rv}/>
+                                (rv, key) => (
+                                    <Rv key={{key}} data={rv}/>
                                 )
                             )
                         ) : (
@@ -95,8 +100,8 @@ function RendezVous(){
                     {
                         rvAvenir.length > 0 ? (
                             rvAvenir.map(
-                                (rv) => (
-                                    <Rv data={rv}/>
+                                (rv, key) => (
+                                    <Rv key={{key}} data={rv}/>
                                 )
                             )
                         ) : (

@@ -42,7 +42,7 @@ function InfosPanel(){
                     Adresse e-mail
                 </div>
                 <div className="infos_panel__item__content">
-                    <a href={`mailto:${ prospectToSee.mail }`}>{prospectToSee.mail}</a> <i className="fa-solid fa-location-arrow"></i>
+                    {prospectToSee.mail}
                 </div>
             </div>
             <div className="infos_panel__item">

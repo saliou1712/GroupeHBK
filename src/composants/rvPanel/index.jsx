@@ -54,7 +54,7 @@ function RvPanel(){
                 <textarea className="description" name="description" id="description" placeholder="Commentaire..." onChange={(e)=>{setDescription(e.target.value)}}></textarea>
                 <div className="btns">
                     <div className="result" id="result"></div>
-                    <div className="btn_close" onClick={()=>{setDisplayRvPanel(!displayRvPanel); setDisplayArrierePlan(!displayArrierePlan)}}>Annuler</div>
+                    <div className="btn_close" onClick={()=>{setDisplayRvPanel(!displayRvPanel); setDisplayArrierePlan(!displayArrierePlan)}}>Fermer</div>
                     <div className="btn_save" onClick={(e)=>{AddRv()}}>Enregistrer</div>
                 </div>
             </div>

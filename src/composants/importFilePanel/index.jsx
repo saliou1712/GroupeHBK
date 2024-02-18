@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ImportFilePanelContext } from "../../utils/importFilePanelContext";
 import { ArrierePlanContext } from "../../utils/arrierePlanContext";
+import { ImportFilePanelContext } from "../../utils/importFilePanelContext";
 import { UpdateContext } from "../../utils/updateContext";
 
 function ImportFilePanel(){
@@ -12,8 +12,8 @@ function ImportFilePanel(){
     async function Import(e){
         e.preventDefault()
         const formData = await new FormData(e.target);
+        const loader = document.getElementById("result")
         try{
-            const loader = document.getElementById("result")
             loader.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
             const response = await fetch("http://localhost:3030/groupehbk/addprospectswithfile", {
                 method: "POST",
@@ -22,23 +22,12 @@ function ImportFilePanel(){
                     'Authorization': `Bearer ${token}`
                 }
             })
-            if(response.status === 500 || response.status === 400){
-                loader.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`
-                setTimeout(() => {
-                    loader.innerHTML = ""
-                }, 5000);
-            }
             if(response.status === 200){
                 loader.innerHTML = `<i class="fa-solid fa-circle-check"></i>`
-                setTimeout(() => {
-                    loader.innerHTML = ""
-                }, 5000);
-                await setUpdate(!update)
-            }
-            if (response.ok) {
                 setUpdate(!update)
             } else {
-                console.error('Erreur lors du téléchargement du fichier.')
+                const responseData = await response.json()
+                loader.innerHTML = responseData.message
             }
         }
         catch(err){

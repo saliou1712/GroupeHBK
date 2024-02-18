@@ -20,7 +20,7 @@ body{
     &__logo{
         font-size: 22px;
         font-weight: bold;
-        padding: 5px;
+        padding: 5px 10px;
     }
     &__links{
         display: flex;
@@ -219,7 +219,8 @@ body{
             justify-content: flex-start;
             align-items: center;
             width: 85%;
-            margin: 20px 0px;
+            margin-top: 20px;
+            padding-bottom: 40px;
             font-size: 20px;
             .result{
                 font-size: 30px;
@@ -284,7 +285,9 @@ body{
         justify-content: space-between;
         align-items: center;
         padding: 10px;
-        background-color: lighten($color: rgb(44, 44, 130), $amount: 20);
+        margin: 0px 5px;
+        border-radius: 20px;
+        background-color: rgb(106, 106, 227);
         color: white;
         font-size: 15px;
         margin-top: 85px;
@@ -377,6 +380,9 @@ body{
     border-radius: 20px;
     width: 170px;
     text-align: center;
+    &--contacted{
+        background-color: rgb(208, 246, 209);
+    }
     .label{
         text-decoration: underline;
     }
@@ -400,15 +406,24 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(44, 44, 130);
+        background-color: rgb(80, 80, 107);
         margin: 10px 5px;
         margin-top: 20px;
         padding: 10px;
         font-size: 20px;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 100%;
         color: white;
+        &--mail{
+            box-shadow: 0px 0px 3px 1px black;
+            color: rgb(44, 44, 130);
+            background-color: white;
+            a{
+                text-decoration: none;
+                color: rgb(44, 44, 130);
+            }
+        }
         &:hover{
             scale: 1.05;
             cursor: pointer;
@@ -528,7 +543,8 @@ body{
             justify-content: flex-end;
             align-items: center;
             width: 85%;
-            margin: 20px 0px;
+            margin-top: 20px;
+            padding-bottom: 40px;
             font-size: 20px;
             .result{
                 font-size: 30px;
@@ -584,7 +600,7 @@ body{
         display: flex;
         flex-direction: column;
         .rv{
-            background-color: rgb(173, 202, 255);
+            background-color: rgb(208, 221, 246);
         }
     }
     &__title{
@@ -684,7 +700,7 @@ body{
     margin: 10px;
     min-height: 140px;
     width: 140px;
-    background-color: rgb(208, 208, 246);
+    background-color: rgb(246, 236, 208);
     color: black;
     border-radius: 20px;
     box-shadow: 0px 0px 3px 0.5px black;
@@ -748,14 +764,14 @@ body{
 }
 
 .delete_rv_panel{
-    padding: 10px;
-    background-color: lighten($color: white, $amount: 20);
+    padding: 15px;
+    background-color: darken($color: white, $amount: 10);
     border-radius: 20px;
     position: fixed;
     z-index: 100;
     top: 50%;
     left: 50%;
-    width: 30%;
+    width: 400px;
     color: black;
     transform: translate(-50%, -50%);
     &__head{
@@ -793,6 +809,22 @@ body{
                 scale: 1.03;
             }
         }
+        &__done{
+            font-size: 20px;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin: 0px 5px;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+                scale: 1.03;
+            }
+        }
+    }
+    .result_delete{
+        margin-top: 10px;
+        font-size: 20px;
     }
 }
 
@@ -826,7 +858,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 160px;
+    bottom: 80px;
     right: 0;
     display: flex;
     justify-content: center;
@@ -858,8 +890,8 @@ body{
     border-radius: 100%;
     font-weight: bold;
     font-size: 30px;
-    color: rgb(169, 169, 218);
-    background-color: lighten($color: rgb(34, 37, 38), $amount: 10);
+    color: rgb(51, 51, 142);
+    background-color: white;
     margin: 20px;
     box-shadow: 0px 0px 5px 1px black;
     &:hover{
