@@ -23,7 +23,7 @@ function EditProspect(){
             try{
                 const resultDiv = document.getElementById("result")
                 resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/updateprospect", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/updateprospect", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ function EditProspect(){
         try {
             const resultDiv = document.getElementById("result")
             resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-            const response = await fetch("http://localhost:3030/groupehbk/deleteprospect", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/deleteprospect", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

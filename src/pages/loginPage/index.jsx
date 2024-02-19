@@ -11,7 +11,7 @@ function LoginPage(){
         const loginResultDiv = document.getElementById("login_result")
         try{
             loginResultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-            const response = await fetch("http://localhost:3030/groupehbk/login", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

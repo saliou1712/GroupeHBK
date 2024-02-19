@@ -19,7 +19,7 @@ function Add_panel({panelDisplay, setPanelDisplay}){
             try{
                 const resultDiv = document.getElementById("result")
                 resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/addprospect", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/addprospect", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

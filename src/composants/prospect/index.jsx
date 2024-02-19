@@ -25,7 +25,7 @@ function Prospect({data}){
 
     async function SetProspectIsContacted(){
         try{
-            const response = await fetch("http://localhost:3030/groupehbk/prospectcontacted", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/prospectcontacted", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

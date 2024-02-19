@@ -36,7 +36,7 @@ function List_prospect(){
             try{
                 const divLoading = document.getElementById("loading")
                 divLoading.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/allprospect", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/allprospect", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function List_prospect(){
 
     async function Export(){
         try{
-            const response = await fetch("http://localhost:3030/groupehbk/download", {
+            const response = await fetch("http://192.168.1.146/groupehbk/download", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

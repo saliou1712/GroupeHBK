@@ -11,7 +11,7 @@ function DeleteRvPanel({data, setDisplayDeletePanel}){
         const resultDiv = document.getElementById("result_delete")
         resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
         try{
-            const response = await fetch("http://localhost:3030/groupehbk/setrvdone", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/setrvdone", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -42,7 +42,7 @@ function DeleteRvPanel({data, setDisplayDeletePanel}){
         const resultDiv = document.getElementById("result_delete")
         try{
             resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-            const response = await fetch("http://localhost:3030/groupehbk/deleterv", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/deleterv", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -15,7 +15,7 @@ function ImportFilePanel(){
         const loader = document.getElementById("result")
         try{
             loader.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-            const response = await fetch("http://localhost:3030/groupehbk/addprospectswithfile", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/addprospectswithfile", {
                 method: "POST",
                 body: formData,
                 headers: {

@@ -18,7 +18,7 @@ function RvPanel(){
             if(dayRv !== "" && horaireRv !== ""){
                 const resultDiv = document.getElementById("result")
                 resultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/addrv", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/addrv", {
                     method: "POST",
                     headers: {
                         "Content-Type" : "application/json",

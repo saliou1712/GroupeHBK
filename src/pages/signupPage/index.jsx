@@ -22,7 +22,7 @@ function SignupPage(){
         if(checkPassword() && checkForm()){
             try{
                 signupResultDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/signup", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/signup", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

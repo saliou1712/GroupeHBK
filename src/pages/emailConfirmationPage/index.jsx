@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 function EmailConfirmationPage() {
     const [confirmationMessage, setConfirmationMessage] = useState('')
@@ -14,7 +14,7 @@ function EmailConfirmationPage() {
             }
     
             try {
-                const response = await fetch(`http://localhost:3030/groupehbk/confirm-email`, {
+                const response = await fetch(`http://192.168.1.146:3030/groupehbk/confirm-email`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

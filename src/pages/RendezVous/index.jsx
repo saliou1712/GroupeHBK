@@ -29,7 +29,7 @@ function RendezVous(){
             try{
                 const divLoading = document.querySelector(".loading")
                 divLoading.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-                const response = await fetch("http://localhost:3030/groupehbk/getallrv", {
+                const response = await fetch("http://192.168.1.146:3030/groupehbk/getallrv", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
