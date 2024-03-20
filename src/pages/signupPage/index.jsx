@@ -81,7 +81,8 @@ function SignupPage(){
                             <option value="">Sélectionner</option>
                             <option value="Technico-commercial">Technico-commercial</option>
                             <option value="Responsable IT">Responsable IT</option>
-                            <option value={"Responsable Marketing"}>Responsable Marketing</option>
+                            <option value="Responsable Marketing">Responsable Marketing</option>
+                            <option value="DGA">DGA</option>
                         </select>
                     </div>
                     <button onClick={()=>{Signup()}}>Inscription</button>

@@ -79,7 +79,7 @@ function Add_panel({panelDisplay, setPanelDisplay}){
                 <input type="mail" placeholder="Adresse mail" autoCapitalize="on" autoComplete="off" onChange={(e)=>{setMail(e.target.value)}}/>
                 <input type="text" placeholder="Adresse web" autoCapitalize="on" autoComplete="off" onChange={(e)=>{setPage_web(e.target.value)}}/>
                 <input type="text" placeholder="Adresse de l'entreprise" autoCapitalize="on" autoComplete="off" onChange={(e)=>{setAdresse(e.target.value)}}/>
-                <textarea className="description" name="description" id="description" placeholder="Description de l'entreprise..." onChange={(e) => {setCommentaire(e.target.value)}}></textarea>
+                <textarea className="description" name="description" id="description" placeholder="Ajouter un commentaire..." onChange={(e) => {setCommentaire(e.target.value)}}></textarea>
                 <div className="btns">
                     <div className="btn_close" onClick={() => {setPanelDisplay(!panelDisplay); setDisplayArrierePlan(!displayArrierePlan)}}>Fermer</div>
                     <div className="btn_save" onClick={()=>{AddProspect()}}>Enregistrer</div>

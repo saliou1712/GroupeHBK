@@ -105,7 +105,7 @@ function EditProspect(){
                 <input type="mail" placeholder="Adresse mail" autoCapitalize="on" autoComplete="off" defaultValue={prospectToSee.mail} onChange={(e)=>{setMail(e.target.value)}}/>
                 <input type="text" placeholder="Adresse web" autoCapitalize="on" autoComplete="off" defaultValue={prospectToSee.page_web} onChange={(e)=>{setPage_web(e.target.value)}}/>
                 <input type="text" placeholder="Adresse de l'entreprise" autoCapitalize="on" autoComplete="off" defaultValue={prospectToSee.adresse} onChange={(e)=>{setAdresse(e.target.value)}}/>
-                <textarea className="description" name="description" id="description" placeholder="Description de l'entreprise..." defaultValue={prospectToSee.commentaire} onChange={(e) => {setCommentaire(e.target.value)}}></textarea>
+                <textarea className="description" name="description" id="description" placeholder="Ajouter un commentaire..." defaultValue={prospectToSee.commentaire} onChange={(e) => {setCommentaire(e.target.value)}}></textarea>
                 <div className="btns">
                     <div className="btn_close" onClick={() => {setEditDisplayPanel(!displayEditPanel); setDisplayArrierePlan(!displayArrierePlan)}}>Fermer</div>
                     <div className="btn_delete" onClick={()=>{Delete()}}>Supprimer</div>

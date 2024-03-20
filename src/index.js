@@ -19,6 +19,12 @@ import SignupPage from "./pages/signupPage";
 import UpdateContextProvider from "./utils/updateContext";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Offres from "./pages/offres";
+import EditOffreContextProvider from "./utils/editOffreContext";
+import InfosOffresPanelContextProvider from "./utils/infosOffrePanelContext";
+import OffreContextProvider from "./utils/offreContext";
+import UpdateOffrePanelContextProvider from "./utils/updateOffrePanelContext";
+import Chat from "./pages/chat";
 
 /* eslint-disable react/jsx-pascal-case */
 
@@ -29,14 +35,19 @@ root.render(
     <ArrierePlanContextProvider>
     <ProspectContextProvider>
     <RvContextProvider>
+    <OffreContextProvider>
     <ImportFilePanelContextProvider>
     <EditPanelContextProvider>
+    <EditOffreContextProvider>
     <InfosPanelContextProvider>
+    <InfosOffresPanelContextProvider>
+    <UpdateOffrePanelContextProvider>
     <AddPanelContextProvider>
     <RvPanelContextProvider>
     <RvEditPanelContextProvider>
       <Router>
         <Routes>
+          <Route path="/*" element={<LoginPage/>}/>
           <Route path="/groupehbk/" element={<LoginPage/>}/>
           <Route path="/groupehbk/login" element={<LoginPage/>}/>
           <Route path="/groupehbk/signup" element={<SignupPage/>}/>
@@ -45,14 +56,20 @@ root.render(
           <Route path="/groupehbk/list_prospect" element={<List_prospect/>}/>
           <Route path="/groupehbk/rendez_vous" element={<RendezVous/>}/>
           <Route path="/groupehbk/page_mail" element={<PageMail/>}/>
+          <Route path="/groupehbk/offres" element={<Offres/>}/>
+          <Route path="/groupehbk/chat" element={<Chat/>}/>
         </Routes>
       </Router>
     </RvEditPanelContextProvider>
     </RvPanelContextProvider>
     </AddPanelContextProvider>
+    </UpdateOffrePanelContextProvider>
+    </InfosOffresPanelContextProvider>
     </InfosPanelContextProvider>
+    </EditOffreContextProvider>
     </EditPanelContextProvider>
     </ImportFilePanelContextProvider>
+    </OffreContextProvider>
     </RvContextProvider>
     </ProspectContextProvider>
     </ArrierePlanContextProvider>

@@ -25,7 +25,7 @@ function List_prospect(){
     const {displayInfosPanel, setDisplayInfosPanel} = useContext(InfosPanelContext)
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
     const {displayRvPanel, setDisplayRvPanel} = useContext(RvPanelContext)
-    const {update} = useContext(UpdateContext)
+    const {update, setUpdate} = useContext(UpdateContext)
     const [filteredProspect, setFilteredProspect] = useState([])
     const {displayEditPanel, setEditDisplayPanel} = useContext(EditPanelContext)
     const {displayFilePanelImport, setDisplayFilePanelImport} = useContext(ImportFilePanelContext)
@@ -33,8 +33,8 @@ function List_prospect(){
 
     useEffect(()=>{
         async function getAllTaches(){
+            const divLoading = document.getElementById("loading")
             try{
-                const divLoading = document.getElementById("loading")
                 divLoading.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
                 const response = await fetch("http://192.168.1.146:3030/groupehbk/allprospect", {
                     method: "GET",
@@ -55,6 +55,7 @@ function List_prospect(){
             }
             catch(err){
                 console.log(err)
+                divLoading.innerHTML = "Une erreur s'est produite lors de la récupération des prospects !"
             }
         }
         getAllTaches()
@@ -124,12 +125,12 @@ function List_prospect(){
         }
     }
 
-    /*
+    
     async function SendMailToAll(){
         try{
             const loader = document.getElementById("loader")
             loader.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i>`
-            const response = await fetch("http://localhost:3030/groupehbk/sendmailtoall", {
+            const response = await fetch("http://192.168.1.146:3030/groupehbk/sendmailtoall", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -152,7 +153,7 @@ function List_prospect(){
             console.log(err)
         }
     }
-    */
+    
 
     function FilterByStatus(status){
         switch(status){
@@ -241,14 +242,10 @@ function List_prospect(){
                 <i class="fa-solid fa-file-import fa-flip-horizontal"></i>
             </div>
             
-            {
-                /*
-                <div className="btn_send_mail" onClick={()=>{SendMailToAll()}}>
-                    <i class="fa-solid fa-envelopes-bulk"></i>
-                </div>
-                */
-            }
-            
+            <div className="btn_send_mail" onClick={()=>{SendMailToAll()}}>
+                <i class="fa-solid fa-envelopes-bulk"></i>
+            </div>
+        
             <div className="send_mail_load" id="loader">
                 
             </div>

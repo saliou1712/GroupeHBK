@@ -61,7 +61,7 @@ function Prospect({data}){
                         <i className="fa-solid fa-eye"></i>
                     </div>
                     <div className="contacter contacter--mail" onClick={()=>{SetProspectIsContacted()}}>
-                        <a href={`mailto:${data.mail}?subject=Opportunité d'investissement au Sénégal`}><i class="fa-solid fa-paper-plane"></i></a>
+                        <a href={`mailto:${data.mail}?subject=`}><i class="fa-solid fa-paper-plane"></i></a>
                     </div>
                     <div className="contacter" onClick={()=>{setProspectToSee(data); setDisplayRvPanel(!displayRvPanel); setDisplayArrierePlan(!displayArrierePlan)}}>
                         <i class="fa-solid fa-calendar-check"></i>
@@ -84,7 +84,7 @@ function Prospect({data}){
                         <i className="fa-solid fa-eye"></i>
                     </div>
                     <div className="contacter contacter--mail" onClick={()=>{SetProspectIsContacted()}}>
-                        <a href={`mailto:${data.mail}?subject=Opportunité d'investissement au Sénégal`}><i class="fa-solid fa-paper-plane"></i></a>
+                        <a href={`mailto:${data.mail}?subject=Oportunidad de inversión en Senegal`}><i class="fa-solid fa-paper-plane"></i></a>
                     </div>
                     <div className="contacter" onClick={()=>{setProspectToSee(data); setDisplayRvPanel(!displayRvPanel); setDisplayArrierePlan(!displayArrierePlan)}}>
                         <i class="fa-solid fa-calendar-check"></i>

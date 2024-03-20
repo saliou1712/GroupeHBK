@@ -15,6 +15,7 @@ function UserMain(){
     function Logout(){
         localStorage.removeItem("token")
         localStorage.removeItem("username")
+        localStorage.removeItem("fonction")
         navigate("/groupehbk/login")
     }
 

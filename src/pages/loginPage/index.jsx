@@ -26,6 +26,7 @@ function LoginPage(){
                 const responseData = await response.json()
                 localStorage.setItem("token", responseData.token)
                 localStorage.setItem("username", responseData.username)
+                localStorage.setItem("fonction", responseData.fonction)
                 setTimeout(()=>{
                    navigate("/groupehbk/home")
                 }, 3000)

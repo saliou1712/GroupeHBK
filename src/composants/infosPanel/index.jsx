@@ -9,6 +9,19 @@ function InfosPanel(){
     const {prospectToSee} = useContext(ProspectContext)
     const {displayInfosPanel, setDisplayInfosPanel} = useContext(InfosPanelContext)
     const {displayArrierePlan, setDisplayArrierePlan} = useContext(ArrierePlanContext)
+
+    function formatString(chaine, end){
+        if(chaine){
+            if(chaine.length > end){
+                const str = chaine.substring(0, end) + "..."
+                return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+            }
+            return chaine.charAt(0).toUpperCase() + chaine.slice(1).toLowerCase();
+        }
+        else{
+            return ""
+        }
+    }
     
     return(
         <div className="infos_panel">
@@ -18,7 +31,7 @@ function InfosPanel(){
                     Nom de l'entreprise
                 </div>
                 <div className="infos_panel__item__content">
-                    { prospectToSee.nom_entreprise }
+                    { formatString(prospectToSee.nom_entreprise, 25) }
                 </div>
             </div>
             <div className="infos_panel__item">
@@ -26,7 +39,7 @@ function InfosPanel(){
                     Domaine
                 </div>
                 <div className="infos_panel__item__content">
-                    { prospectToSee.domaine }
+                    { formatString(prospectToSee.domaine) }
                 </div>
             </div>
             <div className="infos_panel__item">
@@ -34,7 +47,7 @@ function InfosPanel(){
                     N° de Téléphone
                 </div>
                 <div className="infos_panel__item__content">
-                    { prospectToSee.numero }
+                    { formatString(prospectToSee.numero, 25) }
                 </div>
             </div>
             <div className="infos_panel__item">
@@ -42,7 +55,7 @@ function InfosPanel(){
                     Adresse e-mail
                 </div>
                 <div className="infos_panel__item__content">
-                    {prospectToSee.mail}
+                    { formatString(prospectToSee.mail, 25)}
                 </div>
             </div>
             <div className="infos_panel__item">
@@ -58,12 +71,12 @@ function InfosPanel(){
                     Adresse de l'entreprise
                 </div>
                 <div className="infos_panel__item__content">
-                    { prospectToSee.adresse }
+                    { formatString(prospectToSee.adresse, 25) }
                 </div>
             </div>
             <div className="infos_panel__description">
                 <div className="infos_panel__description__content">
-                    <span>Description :</span> { prospectToSee.commentaire }
+                    <span>Commentaires :</span> { prospectToSee.commentaire }
                 </div>
             </div>
         </div>

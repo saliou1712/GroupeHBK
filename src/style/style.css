@@ -175,7 +175,7 @@ body {
   width: 500px;
   top: 75px;
   left: 0;
-  box-shadow: 0px 1px 2px 1px rgb(44, 44, 130);
+  box-shadow: 0px 0px 5px 1px black;
   overflow-y: scroll;
 }
 .add_panel .close {
@@ -385,9 +385,14 @@ body {
   border-radius: 20px;
   width: 170px;
   text-align: center;
+  transition: transform 500ms;
 }
 .prospect--contacted {
   background-color: rgb(208, 246, 209);
+}
+.prospect:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
 .prospect .label {
   text-decoration: underline;
@@ -446,9 +451,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 5px 1px black;
   border-radius: 40px;
-  padding: 15px;
+  padding: 20px;
 }
 .infos_panel .close {
   font-size: 25px;
@@ -477,6 +483,7 @@ body {
   text-align: center;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 0px 0px 2px 1px black;
 }
 .infos_panel__item__content {
   width: 300px;
@@ -493,6 +500,7 @@ body {
   width: 100%;
   margin: 5px 0px;
   overflow-y: auto;
+  box-shadow: 0px 0px 2px 1px black;
 }
 .infos_panel__description__content {
   padding: 5px;
@@ -514,7 +522,7 @@ body {
   width: 500px;
   top: 75px;
   right: 0;
-  box-shadow: 0px 1px 2px 1px rgb(44, 44, 130);
+  box-shadow: 0px 0px 5px 1px black;
 }
 .rvPanel .close {
   font-size: 25px;
@@ -638,7 +646,7 @@ body {
   align-items: center;
   margin: 0px 5px;
   padding: 0px 20px;
-  min-height: 32.6vh;
+  min-height: 39.3vh;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -689,11 +697,12 @@ body {
 }
 
 .loading {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 50px;
+  text-align: center;
 }
 
 .rv {
@@ -779,6 +788,7 @@ body {
   width: 400px;
   color: black;
   transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 5px 1px black;
 }
 .delete_rv_panel__head {
   font-size: 25px;
@@ -888,7 +898,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 80px;
+  bottom: 160px;
   right: 0;
   width: 60px;
   height: 60px;
@@ -922,7 +932,7 @@ body {
   justify-content: center;
   align-items: center;
   color: black;
-  bottom: 80px;
+  bottom: 160px;
   right: 60px;
   width: 60px;
   height: 60px;
@@ -1199,6 +1209,776 @@ body {
 .user_main .logout:hover {
   cursor: pointer;
   color: rgb(100, 100, 161);
+}
+
+.page_offres {
+  width: 100%;
+  margin-top: 85px;
+}
+.page_offres__btn_add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(100, 100, 161);
+  color: white;
+  height: 70px;
+  width: 70px;
+  margin: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.page_offres__btn_add:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.page_offres__filtre {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0px 5px;
+  border-radius: 20px;
+  background-color: rgb(106, 106, 227);
+  color: white;
+  font-size: 15px;
+  margin-top: 85px;
+}
+@media screen and (max-width: 700px) {
+  .page_offres__filtre {
+    margin-top: 105px;
+  }
+}
+.page_offres__filtre .filtre_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.page_offres__filtre .status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page_offres__filtre .status select {
+  background-color: rgb(217, 217, 244);
+  color: black;
+}
+.page_offres__filtre select {
+  border-radius: 20px;
+  padding: 10px;
+  width: 170px;
+  margin: 0px 5px;
+  border: none;
+  outline: none;
+  background-color: rgb(217, 217, 244);
+}
+.page_offres__filtre option {
+  font-size: 20px;
+}
+.page_offres__filtre .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .page_offres__filtre .search {
+    flex-direction: column;
+  }
+}
+.page_offres__filtre .search input {
+  padding: 10px;
+  font-size: 20px;
+  width: 300px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+@media screen and (max-width: 600px) {
+  .page_offres__filtre .search input {
+    width: 80%;
+  }
+}
+.page_offres__filtre .search .btn_search {
+  padding: 14px;
+  margin-left: 5px;
+  background-color: #262626;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.page_offres__filtre .search .btn_search:hover {
+  cursor: pointer;
+  background-color: rgb(44, 44, 130);
+}
+
+.edit_offre {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e6e6e6;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.edit_offre__result {
+  font-size: 20px;
+  margin: 10px;
+}
+.edit_offre__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  margin: 10px;
+}
+.edit_offre__head {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px;
+}
+.edit_offre__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.edit_offre__form input {
+  padding: 20px;
+  font-size: 25px;
+  margin: 5px 0px;
+  width: 80%;
+  box-shadow: 0px 0px 2px 1px black;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.edit_offre__form select {
+  padding: 20px 15px;
+  font-size: 25px;
+  margin: 5px 0px;
+  width: 85%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 1px black;
+  border: none;
+  outline: none;
+}
+.edit_offre__form textarea {
+  width: 80%;
+  resize: none;
+  padding: 20px;
+  font-size: 25px;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
+  height: 200px;
+  box-shadow: 0px 0px 2px 1px black;
+}
+.edit_offre__btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 85%;
+  margin: 20px 0px;
+}
+.edit_offre__btns__close {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+.edit_offre__btns__close:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.edit_offre__btns__save {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.edit_offre__btns__save:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+
+.update_offre {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e6e6e6;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+.update_offre__result {
+  font-size: 20px;
+  margin: 10px;
+}
+.update_offre__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  margin: 10px;
+}
+.update_offre__head {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px;
+}
+.update_offre__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.update_offre__form input {
+  padding: 20px;
+  font-size: 25px;
+  margin: 5px 0px;
+  width: 80%;
+  box-shadow: 0px 0px 2px 1px black;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.update_offre__form select {
+  padding: 20px 15px;
+  font-size: 25px;
+  margin: 5px 0px;
+  width: 85%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 1px black;
+  border: none;
+  outline: none;
+}
+.update_offre__form textarea {
+  width: 80%;
+  resize: none;
+  padding: 20px;
+  font-size: 25px;
+  margin: 5px 0px;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
+  height: 200px;
+  box-shadow: 0px 0px 2px 1px black;
+}
+.update_offre__btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 85%;
+  margin: 20px 0px;
+}
+.update_offre__btns__close {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+.update_offre__btns__close:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.update_offre__btns__save {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.update_offre__btns__save:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+
+.list_offres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80.5vh;
+  padding: 10px 0px;
+}
+
+.offre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  box-shadow: 0px 0px 5px 1px black;
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+  transition: transform 500ms;
+  min-width: 60%;
+  min-height: 100px;
+}
+.offre:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+.offre--deal {
+  background-color: rgb(198, 238, 198);
+}
+.offre--cloturee {
+  background-color: rgb(240, 216, 216);
+}
+.offre--active {
+  background-color: rgb(244, 247, 214);
+}
+.offre__objet {
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  width: 250px;
+  min-height: 100px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 2px 1px black;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.offre__montant {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  width: 300px;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
+  align-items: center;
+  margin-left: 20px;
+}
+.offre__montant .title {
+  margin: 0px 10px;
+}
+.offre__montant .montant {
+  margin: 0px 5px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+.offre__entreprise {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+  overflow-y: auto;
+  margin-right: 20px;
+}
+.offre__entreprise .nom_entreprise {
+  font-weight: bold;
+}
+.offre__statut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 5px;
+  color: black;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+.offre__statut .statut {
+  font-weight: bold;
+}
+
+.infos_offre {
+  position: fixed;
+  z-index: 100;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 5px 1px black;
+  border-radius: 25px;
+  font-size: 20px;
+  padding: 20px;
+  width: 30%;
+}
+.infos_offre__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 25px;
+}
+.infos_offre__objet {
+  font-weight: bold;
+  font-size: 25px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 10px 0px;
+  box-shadow: 0px 0px 2px 1px black;
+  margin: 30px 0px 20px 0px;
+}
+.infos_offre__entreprise {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 5px;
+  margin: 10px 0px;
+  color: black;
+}
+.infos_offre__entreprise .nom_entreprise {
+  font-weight: bold;
+}
+.infos_offre__statut {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 5px;
+  color: black;
+}
+.infos_offre__statut .statut {
+  font-weight: bold;
+}
+.infos_offre__details {
+  background-color: #cccccc;
+  margin: 10px 0px;
+  padding: 5px;
+  height: 100px;
+  overflow-y: auto;
+}
+.infos_offre__details span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.infos_offre__montant {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px 0px;
+  margin-top: 20px;
+  color: white;
+}
+.infos_offre__montant .title {
+  margin: 0px 10px;
+  font-weight: bold;
+}
+.infos_offre__montant .montant {
+  margin: 0px 5px;
+}
+.infos_offre__btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.infos_offre__btns__close {
+  padding: 10px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  margin-right: 10px;
+}
+.infos_offre__btns__close:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.infos_offre__btns__update {
+  padding: 10px;
+  font-weight: bold;
+  background-color: orange;
+  margin-left: 10px;
+}
+.infos_offre__btns__update:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.infos_offre__btns__delete {
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgb(231, 98, 98);
+}
+.infos_offre__btns__delete:hover {
+  cursor: pointer;
+  scale: 1.03;
+}
+.infos_offre__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.chat {
+  margin-top: 80px;
+  height: 91.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: white;
+}
+@media screen and (max-height: 600px) {
+  .chat {
+    height: 86vh;
+  }
+}
+.chat__conversations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  z-index: 100;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  box-shadow: 0px 0px 3px 1px black;
+}
+.chat__conversations__head {
+  font-size: 25px;
+  padding: 15px 0px;
+  text-align: center;
+  background-color: rgb(176, 176, 245);
+  font-weight: bold;
+  color: black;
+  width: 100%;
+}
+.chat__conversations__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(227, 227, 246);
+  width: 100%;
+  height: 78.6vh;
+  overflow-y: auto;
+}
+@media screen and (max-height: 600px) {
+  .chat__conversations__content {
+    height: 65.7vh;
+  }
+}
+.chat__conversations__foot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(177, 177, 226);
+}
+.chat__conversations__foot input {
+  padding: 20px;
+  width: 90%;
+  font-size: 20px;
+  border: none;
+  background-color: rgb(182, 182, 235);
+  text-align: center;
+  outline: none;
+}
+.chat__content {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+}
+.chat__content__title {
+  margin: 20px 0px;
+  font-size: 20px;
+  color: rgb(67, 67, 155);
+}
+.chat__content__message_input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  box-shadow: 0px 0px 3px 1px black;
+  border-radius: 20px;
+}
+.chat__content__message_input input {
+  font-size: 25px;
+  text-align: left;
+  height: 80px;
+  width: 80%;
+  padding: 0px 10px;
+  resize: none;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+}
+.chat__content__message_input .btn_send {
+  text-align: center;
+  color: white;
+  background-color: rgb(101, 101, 212);
+  font-size: 25px;
+  height: 80px;
+  padding: 0px 5px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.chat__content__message_input .btn_send:hover {
+  cursor: pointer;
+  background-color: #2e2ea5;
+}
+.chat__content__message_input .btn_send i {
+  margin-right: 5px;
+}
+.chat__content__messages {
+  width: 90%;
+  height: 77vh;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  margin: 10px 0px;
+  overflow-y: auto;
+}
+@media screen and (max-height: 600px) {
+  .chat__content__messages {
+    height: 60vh;
+  }
+}
+
+.chat_member {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  padding: 10px 5px;
+  background-color: rgb(201, 201, 233);
+  border-radius: 10px;
+  margin: 5px 10px 0px 10px;
+}
+.chat_member i {
+  margin: 0px 5px;
+  font-size: 15px;
+}
+.chat_member .username {
+  color: rgb(37, 37, 128);
+}
+
+.message_in {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: black;
+  font-size: 20px;
+}
+.message_in__content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(217, 217, 245);
+  border-radius: 20px;
+  width: 40%;
+}
+.message_in__content__username {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  color: rgb(53, 53, 189);
+  margin-bottom: 5px;
+}
+.message_in__content__username .pp {
+  color: white;
+  background-color: rgb(62, 62, 165);
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.message_in__content__infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 5px;
+  color: rgb(62, 62, 165);
+}
+
+.message_out {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: black;
+  font-size: 20px;
+}
+.message_out__content {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-color: rgb(164, 164, 248);
+  border-radius: 20px;
+  padding: 10px;
+}
+.message_out__content__infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 5px;
+  color: white;
 }
 
 footer {
